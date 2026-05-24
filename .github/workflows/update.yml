@@ -1,0 +1,38 @@
+name: Update OTA News Summary
+
+on:
+  schedule:
+    # 日本時間 毎朝 7:00 に実行（UTC 22:00）
+    - cron: "0 22 * * *"
+  workflow_dispatch:  # 手動実行ボタンも有効化
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper & summarizer
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python main.py
+
+      - name: Commit & push updated HTML
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          git diff --staged --quiet || git commit -m "chore: update news summary $(date +'%Y-%m-%d %H:%M JST' -d '+9 hours')"
+          git push
