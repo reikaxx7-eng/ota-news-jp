@@ -20,7 +20,9 @@ def main():
     print("2/4 各記事の本文を取得中...")
     for i, article in enumerate(articles):
         print(f"    [{i+1}/{len(articles)}] {article.title[:50]}...")
-        article.body = fetch_article_body(article.url)
+        article.body, fetched_date = fetch_article_body(article.url)
+        if fetched_date:
+            article.date = fetched_date
 
     print("3/4 Claude API で日本語要約中...")
     articles = summarize_articles(articles, api_key)

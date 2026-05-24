@@ -88,7 +88,8 @@ def fetch_articles(max_articles: int = 10) -> list[Article]:
     return articles
 
 
-def fetch_article_body(url: str) -> str:
+def fetch_article_body(url: str) -> tuple[str, str]:
+    """Returns (body_text, date_string)."""
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
     }
@@ -96,6 +97,20 @@ def fetch_article_body(url: str) -> str:
         resp = requests.get(url, headers=headers, timeout=15)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
+
+        # Extract date from article page
+        date = ""
+        time_el = soup.find("time")
+        if time_el:
+            date = time_el.get("datetime", "") or time_el.get_text(strip=True)
+        if not date:
+            date_el = soup.find(class_=re.compile(r"date|publish|posted", re.I))
+            if date_el:
+                date = date_el.get_text(strip=True)
+        if not date:
+            text_all = soup.get_text(" ", strip=True)
+            m = re.search(r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+\d{1,2},?\s+\d{4}", text_all)
+            date = m.group(0) if m else ""
 
         # Remove nav, footer, sidebar
         for el in soup.select("nav, footer, aside, [class*='sidebar'], [class*='related'], script, style"):
@@ -109,7 +124,6 @@ def fetch_article_body(url: str) -> str:
             body_el = soup
 
         text = body_el.get_text(separator="\n", strip=True)
-        # Limit to ~3000 chars to keep API cost low
-        return text[:3000]
-    except Exception as e:
-        return ""
+        return text[:3000], date
+    except Exception:
+        return "", ""
