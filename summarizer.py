@@ -1,3 +1,4 @@
+import re
 import anthropic
 from scraper import Article
 
@@ -22,7 +23,10 @@ def summarize_articles(articles: list[Article], api_key: str) -> list[Article]:
             max_tokens=300,
             messages=[{"role": "user", "content": prompt}],
         )
-        article.excerpt = response.content[0].text.strip()
+        text = response.content[0].text.strip()
+        # Strip any markdown headings Claude might prepend (e.g. "# 要約\n\n")
+        text = re.sub(r"^#+\s*\S+\s*\n+", "", text).strip()
+        article.excerpt = text
 
     return articles
 
