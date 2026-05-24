@@ -46,11 +46,19 @@ def fetch_articles(max_articles: int = 10) -> list[Article]:
         cat_el = card.find(class_=re.compile(r"categ|label|tag", re.I))
         category = cat_el.get_text(strip=True) if cat_el else "General"
 
-        # Date
-        date_el = card.find(["time", "[class*='date']"])
-        if not date_el:
-            date_el = card.find(class_=re.compile(r"date|time|publish", re.I))
-        date = date_el.get_text(strip=True) if date_el else ""
+        # Date — try <time> tag first, then class-based, then text pattern
+        date_el = card.find("time")
+        if date_el:
+            date = date_el.get("datetime", "") or date_el.get_text(strip=True)
+        else:
+            date_el = card.find(class_=re.compile(r"date|publish|time", re.I))
+            if date_el:
+                date = date_el.get_text(strip=True)
+            else:
+                # Fallback: scan all text for date patterns like "May 18, 2026"
+                text_content = card.get_text(" ", strip=True)
+                m = re.search(r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+\d{1,2},?\s+\d{4}", text_content)
+                date = m.group(0) if m else ""
 
         # Author
         author_el = card.find(class_=re.compile(r"author|byline", re.I))
