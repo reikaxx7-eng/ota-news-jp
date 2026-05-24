@@ -5,15 +5,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OTA News 日本語まとめ</title>
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: "Hiragino Sans", sans-serif;
-      display: flex; align-items: center; justify-content: center;
-      height: 100vh; margin: 0; background: #f5f6fa; color: #555;
+      font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+      background: #f5f6fa;
+      color: #2c2c2c;
+      line-height: 1.7;
     }
-    p { font-size: 1.1rem; }
+    header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #2563ab 100%);
+      color: #fff;
+      padding: 32px 20px 24px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.8rem; letter-spacing: 0.05em; }
+    header p { font-size: 0.85rem; margin-top: 6px; opacity: 0.8; }
+    .update-time {
+      background: #e8f0fe;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #555;
+      padding: 8px;
+      border-bottom: 1px solid #d0daf0;
+    }
+    main {
+      max-width: 860px;
+      margin: 32px auto;
+      padding: 0 16px;
+      display: grid;
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border-left: 4px solid #2563ab;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.11); }
+    .card-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+    .category {
+      background: #2563ab;
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .date { color: #888; font-size: 0.8rem; }
+    .card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .card-title a { color: #1a3a5c; text-decoration: none; }
+    .card-title a:hover { text-decoration: underline; color: #2563ab; }
+    .summary { font-size: 0.92rem; color: #444; margin-bottom: 14px; }
+    .read-more { font-size: 0.82rem; color: #2563ab; text-decoration: none; font-weight: 600; }
+    .read-more:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      padding: 28px;
+      font-size: 0.78rem;
+      color: #aaa;
+    }
+    footer a { color: #2563ab; text-decoration: none; }
   </style>
 </head>
 <body>
-  <p>準備中です。初回の自動更新をお待ちください。</p>
+  <header>
+    <h1>OTA News 日本語まとめ</h1>
+    <p>Online Travel Agency 業界の最新ニュースを日本語で</p>
+  </header>
+  <div class="update-time">最終更新: 2026年05月24日 22:50 JST</div>
+  <main>
+    
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/booking-holdings/booking-holdings-launches-unified-ad-platform-spanning-bookingcom-priceline-and-agoda" target="_blank" rel="noopener">Booking Holdings Launches Unified Ad Platform Spanning Booking.com, Priceline, and Agoda</a>
+          </h2>
+          <p class="summary"># 要約
+
+Booking Holdingsは、Booking.com、Priceline、Agodaの3つの主要OTAブランド全体で広告を購入できる統一プラットフォーム「BKNG Ads」を立ち上げました。これまでホテルや旅行事業者は3つのブランドそれぞれと個別に交渉・管理する必要がありましたが、新プラットフォームにより単一の購買で全ブランドをカバーできるようになります。この施策はBooking Holdingsがポートフォリオを3つの独立したブランドではなく統合された商業システムとして運営する長期戦略の一環であり、バックエンド統合や忠誠度プログラムの一元化に続く重要なステップとなっています。</p>
+          <a class="read-more" href="https://www.ota-news.com/booking-holdings/booking-holdings-launches-unified-ad-platform-spanning-bookingcom-priceline-and-agoda" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/airbnb/airbnbs-2026-summer-release-turns-it-into-a-full-service-travel-platform" target="_blank" rel="noopener">Airbnb's 2026 Summer Release Turns It Into a Full-Service Travel Platform</a>
+          </h2>
+          <p class="summary"># 要約
+
+Airbnbは2026年夏のアップデートで、宿泊予約プラットフォームからフルサービスの旅行プラットフォームへの転換を発表しました。レンタカー、空港送迎、食料品配達、荷物保管、ブティックホテルなど、従来のOTAが提供してきたサービスを次々と追加し、アプリ内で旅行に必要なあらゆる手配を完結できる仕組みを構築しています。各サービスには初回割引やクレジット還元などのインセンティブが用意されており、ユーザーをAirbnbのエコシステムに深く取り込む戦略です。この動きは、Booking.comやExpediaなどの競合他社との直接競争を意味し、OTA業界全体における勢力図の変化を示唆しています。</p>
+          <a class="read-more" href="https://www.ota-news.com/airbnb/airbnbs-2026-summer-release-turns-it-into-a-full-service-travel-platform" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/booking/bookingcom-brings-car-rental-search-to-chatgpt-and-launches-three-ai-tools-for-the-road-trip-season" target="_blank" rel="noopener">Booking.com Brings Car Rental Search to ChatGPT and Launches Three AI Tools for the Road Trip Season</a>
+          </h2>
+          <p class="summary"># 要約
+
+Booking.comは、ChatGPTへのレンタカー検索機能の統合と、ロードトリップシーズン向けの3つのAIツールを発表しました。ChatGPTアプリ内でユーザーが自然言語で車を検索でき、Booking.comで予約完了まで進められるようになります。さらに、予約後の質問に答えるAIアシスタント、レビューを要約するAIツール、細かい条件で検索できるスマート検索機能が提供され、カーレンタルの利用体験向上と顧客サポートの効率化を目指しています。これらの機能により、レンタカー利用時の不満や問題を削減し、トラベラーの満足度向上が期待されています。</p>
+          <a class="read-more" href="https://www.ota-news.com/booking/bookingcom-brings-car-rental-search-to-chatgpt-and-launches-three-ai-tools-for-the-road-trip-season" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/expedia-group/expedia-group-b2b-launches-ai-toolkit-and-intelligent-experience-platform-at-explore-26" target="_blank" rel="noopener">Expedia Group B2B Launches AI Toolkit and Intelligent Experience Platform at Explore 26</a>
+          </h2>
+          <p class="summary">Expedia Group B2Bは、Explore 26カンファレンスで、AI支援型の旅行計画体験を構築するための新しいAIツールキットと「Intelligent Experience Platform」を発表しました。このプラットフォームは、航空会社やロイヤルティプログラム、金融サービスなどのパートナー企業が、Expediaの供給・インテリジェンスインフラを活用して、旅行体験を素早く立ち上げることができるモジュール型AI コンポーネントを提供します。同時に新しいマーチャンダイジングツールも発表し、年間700万件以上のサービスコール対応と25言語での24時間サポートを実現しています。この戦略は、AIアシスタントを通じた旅行検索が主流となる将来を見据え、Expediaが消費者ブランドではなく、エンタープライズ向けの不可欠なインフラプロバイダーへと転換していることを示しています。</p>
+          <a class="read-more" href="https://www.ota-news.com/expedia-group/expedia-group-b2b-launches-ai-toolkit-and-intelligent-experience-platform-at-explore-26" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/expedia-group/expedia-group-to-acquire-cartrawler-in-second-b2b-deal-of-2026" target="_blank" rel="noopener">Expedia Group to Acquire CarTrawler in Second B2B Deal of 2026</a>
+          </h2>
+          <p class="summary"># 要約
+
+Expedia Groupは、ダブリン拠点のB2Bプラットフォーム「CarTrawler」を約3億5000万ドルで買収することを発表しました。CarTrawlerは300以上の旅行ブランド向けにレンタカーや地上交通サービスを提供しており、同社のB2B配信プラットフォーム「Rapid API」にこれらの機能を統合することで、より包括的な旅行サービス基盤の構築を目指しています。これは2026年におけるExpediaの2番目のB2B買収案件であり、戦略的には単なるOTAではなく、第三者の旅行コマースの基盤インフラとしての立場確立を狙ったものです。</p>
+          <a class="read-more" href="https://www.ota-news.com/expedia-group/expedia-group-to-acquire-cartrawler-in-second-b2b-deal-of-2026" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/makemytrip/makemytrip-posts-record-104b-in-gross-bookings-for-fy2026" target="_blank" rel="noopener">MakeMyTrip Posts Record $10.4B in Gross Bookings for FY2026</a>
+          </h2>
+          <p class="summary"># 要約
+
+インドの大手オンライン旅行代理店MakeMyTripは、2026年度の総予約額が104億ドルと過去最高を記録し、前年比10.4%の成長を達成した。売上高は初めて10億ドルを突破し、営業利益も30.1%増加するなど好調な決算となった。ただし第4四半期は西アジア情勢の影響で国際線の需要が減少し、売上成長率が1.9%に鈍化した。一方、ホテル・パッケージとバスチケットが好調で、特に地方都市への事業拡大とAI助手「Myra」の活用により、国内旅行の需要シフトが進展している。</p>
+          <a class="read-more" href="https://www.ota-news.com/makemytrip/makemytrip-posts-record-104b-in-gross-bookings-for-fy2026" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/airbnb/european-travelers-are-booking-closer-to-home-this-summer-airbnb-data-shows" target="_blank" rel="noopener">European Travelers Are Booking Closer to Home This Summer, Airbnb Data Shows</a>
+          </h2>
+          <p class="summary"># 要約
+
+Airbnbの最新データによると、2026年夏のヨーロッパの旅行者は長距離国際線よりも国内・短距離移動を選好しており、フランス、ドイツ、スウェーデンなどでは約4人に1人が自国内での旅行を計画しています。ジェット燃料価格の上昇により長距離移動が割高になったことが、この傾向を加速させています。また宿泊施設の選好も変化しており、都市部よりも農村部・海岸部・山岳地域の物件が人気を集め、アルバニア南部やノルマンディー、スウェーデンの農村地域といった手頃な価格で短時間で到着できる目的地が注目されています。さらにコスト削減を目的とした4人以上のグループ旅行も増加している傾向が見られます。</p>
+          <a class="read-more" href="https://www.ota-news.com/airbnb/european-travelers-are-booking-closer-to-home-this-summer-airbnb-data-shows" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/kayak/kayak-launches-ask-ai-for-conversational-trip-planning-in-us-uk-and-canada" target="_blank" rel="noopener">KAYAK Launches Ask AI for Conversational Trip Planning in US, UK and Canada</a>
+          </h2>
+          <p class="summary"># 要約
+
+KAYAKは米国、英国、カナダで会話型AI検索ツール「Ask AI」を正式にローンチしました。このツールは、従来の構造化フィルターではなく、自然言語での質問を通じて旅行オプションを検索できるため、ユーザーは「NYCから3時間以内で1人$300以下の家族向けの目的地」といった複雑な条件を一度に検索できます。Ask AIはフライト、ホテル、レンタカーの全カテゴリに対応し、検索結果の絞り込みやフィルタリングも自然言語で実行可能です。Booking Holdingsの傘下にあるKAYAKは、旅行計画をより簡単にすることで利用者の予約頻度向上と比較検索の削減を目指しており、今後さらに多くの市場への展開を予定しています。</p>
+          <a class="read-more" href="https://www.ota-news.com/kayak/kayak-launches-ask-ai-for-conversational-trip-planning-in-us-uk-and-canada" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/makemytrip/makemytrip-launches-myra-20-voice-first-ai-handles-end-to-end-bookings-in-eight-languages" target="_blank" rel="noopener">MakeMyTrip Launches Myra 2.0: Voice-First AI Handles End-to-End Bookings in Eight Languages</a>
+          </h2>
+          <p class="summary">インド最大のオンライン旅行代理店MakeMyTripが、音声AIアシスタント「Myra 2.0」をリリースしました。このツールは、チャットウィンドウ内で検索から支払いまでの旅行予約全体を完結でき、ベンガル語、ヒンディー語、英語など8言語の音声入力に対応しています。パスポートのOCR機能や音声による多言語対応により、特に階級都市や小都市のユーザーの利用率が高く、従来のインターフェースと比べて予約完了率が10%向上したと報告されています。OpenAIのAPIを活用したこのアップデートは、インド市場における音声予約の優位性を強化する戦略的な一手となっています。</p>
+          <a class="read-more" href="https://www.ota-news.com/makemytrip/makemytrip-launches-myra-20-voice-first-ai-handles-end-to-end-bookings-in-eight-languages" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">
+            <span class="category">一般</span>
+            <span class="date">日付不明</span>
+          </div>
+          <h2 class="card-title">
+            <a href="https://www.ota-news.com/expedia-group/expedia-group-to-webcast-explore-26-partner-conference-opening-session-on-may-19" target="_blank" rel="noopener">Expedia Group to Webcast Explore 26 Partner Conference Opening Session on May 19</a>
+          </h2>
+          <p class="summary"># 要約
+
+Expedia Groupは5月19～20日にラスベガスで開催する年次パートナーカンファレンス「Explore 26」の開幕セッションをウェブキャストで配信する。CEOのアリアーヌ・ゴーリンらが登壇し、新しい製品やパートナーシップの革新を発表する予定である。特に先週昇進したばかりのB2B部門および最高商務責任者のアルフォンソ・パレデスの初の重要な声明や、最高製品責任者による新機能発表が注目される。同社は第1四半期に好調な決算を報告しており、B2B部門の急速な成長を背景に、パートナー向けのプラットフォーム強化に関する重要な発表が期待されている。</p>
+          <a class="read-more" href="https://www.ota-news.com/expedia-group/expedia-group-to-webcast-explore-26-partner-conference-opening-session-on-may-19" target="_blank" rel="noopener">原文を読む →</a>
+        </article>
+
+  </main>
+  <footer>
+    情報ソース: <a href="https://www.ota-news.com/" target="_blank">OTA News</a> &nbsp;|&nbsp;
+    Claude AI による日本語要約
+  </footer>
 </body>
 </html>
